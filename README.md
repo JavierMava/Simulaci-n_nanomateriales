@@ -1,2 +1,2 @@
-# Simulaci-n_nanomateriales
+# Simulacion_nanomateriales
 Repositorio para la unidad de simulación computacional de nanomateriales

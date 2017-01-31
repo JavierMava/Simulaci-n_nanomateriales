@@ -1,8 +1,12 @@
+import numpy as np
 import matplotlib.pyplot as plt
 import random
+from random import randint
 
-def hop(n):
-    s = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,n,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+
+def eventos(n):
+    s = [0,0,0,0,0,0,0,0,0,0,n,0,0,0,0,0,0,0,0,0,0]
     global ls
     ls = len(s)
     i = 0
@@ -28,12 +32,36 @@ def hop(n):
         i+=1
     return s
 
-x = hop(100)
+
+
+fig, ax = plt.subplots(figsize=(10, 8))
+
+
+x = eventos(randint(0,100))
+xs = np.arange (len(x))
+
+
+width = 100
 y = sum(x)
-list1 = []
+
+ax.plot(y, label= 'Numero de eventos') #corregir
+
+dist = []
 for k in range(0,ls):
-    list1.append(k)
-print(list1)
-plt.hist(x,list1)
+    dist.append(k)
+print(dist)
+print(y)
+
+
+
+plt.bar(xs,x,dist) 
+
+ax.grid(True)
+
+ax.legend(loc='best')
+ax.set_title('Simulacion particulas')
+ax.set_xlabel('Eventos')
+#ax.set_ylabel('x')
+
 plt.show()
 
